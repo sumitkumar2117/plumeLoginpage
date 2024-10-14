@@ -1,6 +1,5 @@
 import LoginLogo from '/login/logo.svg'
 import Group from '/login/Group.svg'
-import Background from '/login/Vector.svg'
 import { useState } from 'react';
 import { useContext } from 'react';
 import { UserContext } from './UserContext';
@@ -87,7 +86,6 @@ function Login() {
                     </form>
                 </div>
             </div>
-            
         </div>
     </div>
   )
