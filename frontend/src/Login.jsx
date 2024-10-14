@@ -2,11 +2,30 @@ import LoginLogo from '/login/logo.svg'
 import Group from '/login/Group.svg'
 import Background from '/login/Vector.svg'
 import { useState } from 'react';
+import { useContext } from 'react';
+import { UserContext } from './UserContext';
+import axios from 'axios';
 
 function Login() {
     const [userID,setUserID] = useState('');
     const [password, setPassword] = useState('');
     const [mobileNo, setMobileNo] = useState('');
+
+    const {setUserIDname} = useContext(UserContext);
+
+    async function handleSubmit(e){
+        e.preventDefault();
+        console.log("first submit form")
+        try {
+            const {data} = await axios.post('http://localhost:4000/login', {userID});
+            console.log(data)
+            setUserIDname(data.id);
+            
+        } catch (error) {
+            console.log(error);
+        }
+        
+    }
 
 
   return (
@@ -25,7 +44,7 @@ function Login() {
                     <div className='w-full grid justify-center'><hr className='w-52 items-center h-1' /></div>
                 </div>
                 <div className='mt-12'>
-                    <form className='gap-y-7 grid' action="">
+                    <form className='gap-y-7 grid' onSubmit={handleSubmit} action="">
                         <div className='pr-8' >
                             <div className='text-xs font-medium'>User ID</div>
                             <input value={userID}
@@ -55,8 +74,8 @@ function Login() {
                                 />
                             <div className='mt-1 text-xs w-full justify-end grid'>Forgot Your Password ?</div>
                         </div>
-                        <div className='pr-8 mt-6'>
-                            <button className='w-full text-xl rounded-md shadow-md shadow-[#C0C0C0] font-semibold bg-[#00A82E] py-3 mr-3 text-white'>Login</button>
+                        <div className='pr-8 mt-6' >
+                            <button type='submit' className='w-full text-xl rounded-md shadow-md shadow-[#C0C0C0] font-semibold bg-[#00A82E] py-3 mr-3 text-white'>Login</button>
                         </div>
                         
                     </form>
