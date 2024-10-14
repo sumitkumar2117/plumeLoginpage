@@ -27,7 +27,6 @@ function Login() {
         
     }
 
-
   return (
     <div className="py-12 pb-16 pl-20 grid grid-cols-5 w-full bg-cover" 
         style={{backgroundImage: "url(/login/Vector.svg)", color: "black"}}>
@@ -44,7 +43,9 @@ function Login() {
                     <div className='w-full grid justify-center'><hr className='w-52 items-center h-1' /></div>
                 </div>
                 <div className='mt-12'>
+                    {/* Form for login */}
                     <form className='gap-y-7 grid' onSubmit={handleSubmit} action="">
+                        {/* User ID */}
                         <div className='pr-8' >
                             <div className='text-xs font-medium'>User ID</div>
                             <input value={userID}
@@ -54,6 +55,8 @@ function Login() {
                                 placeholder='Priyanshu.raj@Plunes.com'
                                 />
                         </div>
+
+                        {/* Mobile No. */}
                         <div className='pr-8' >
                             <div className='text-xs font-medium'>Mobile No</div>
                             <input value={mobileNo}
@@ -64,6 +67,8 @@ function Login() {
                                 />
                             
                         </div>
+
+                        {/* password */}
                         <div className='pr-8' >
                             <div className='text-xs font-medium'>Password</div>
                             <input value={password}
@@ -74,6 +79,7 @@ function Login() {
                                 />
                             <div className='mt-1 text-xs w-full justify-end grid'>Forgot Your Password ?</div>
                         </div>
+                        {/* login button */}
                         <div className='pr-8 mt-6' >
                             <button type='submit' className='w-full text-xl rounded-md shadow-md shadow-[#C0C0C0] font-semibold bg-[#00A82E] py-3 mr-3 text-white'>Login</button>
                         </div>
