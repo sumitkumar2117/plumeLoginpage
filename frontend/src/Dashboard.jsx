@@ -5,7 +5,7 @@ import Cases from "./component/Cases";
 import Thismonth from "./component/Thismonth";
 import PatientStatus from "./component/PatientStatus";
 import SIP from "./component/SIP";
-
+import SearchBar from "./component/SearchBar";
 
 
 export default function Dashboard(){
@@ -65,8 +65,10 @@ export default function Dashboard(){
                             <Thismonth/>
                         </div>
                         <div className="flex justify-between">
-                            <div>checkbox</div>
-                            <div>SearchBar</div>
+                            {/* Toggle */}
+                            <div><input type="checkbox" name="" id="" /></div>
+                            {/* SearchBar */}
+                            <SearchBar/>
                         </div>     
                     </div>
                     <Cases/>
