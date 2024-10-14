@@ -32,7 +32,7 @@ app.post('/login', (req,res) =>{
     console.log("useriD",userID);
     console.log("secret",jwtSecret)
    jwt.sign( {userID}, jwtSecret, {}, (err, token) =>{
-    console.log('token', token);
+    // console.log('token', token);
     res.cookie('token', token).status(201).json({
         id:userID,
     });
