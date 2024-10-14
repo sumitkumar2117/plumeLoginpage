@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use (
     cors ({
-      origin: 'http://localhost:5173',
+      origin: 'https://plume-loginpage.vercel.app',
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
       allowedHeaders: 'Authorization, token, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
