@@ -13,7 +13,7 @@ export default function Dashboard(){
     const {setUserIDname} = useContext(UserContext);
     
     async function logout() {
-        axios.post('http://localhost:4000/logout').then(() =>{
+        axios.post('https://plume-loginpage-43u4.vercel.app/logout').then(() =>{
             setUserIDname(null);
         });
     }
